@@ -1,17 +1,22 @@
 function validate1() {
     const fNameResult = nameCheck(document.forms["information"]["fname"].value);
     const lNameResult = nameCheck(document.forms["information"]["lname"].value);
+    const genderResult = dropCheck(document.forms["information"]["gender"].value);
+    const stateResult = dropCheck(document.forms["information"]["state"].value);
 
     getImage(Boolean(fNameResult), "fname");
     getImage(Boolean(lNameResult), "lname");
+    getImage(Boolean(genderResult), "gender");
+    getImage(Boolean(stateResult), "state");
 
     getNotification(Boolean(fNameResult), "fname");
     getNotification(Boolean(lNameResult), "lname");
+    getNotification(Boolean(genderResult), "gender");
+    getNotification(Boolean(stateResult), "state");
 }
 
 function nameCheck(name) {
-    console.log("name:", name);
-    return (name.match(/^[a-zA-Z0-9]*$/) && name != null || name != "");
+    return (name.match(/[a-zA-Z0-9]/));
 }
 
 function dropCheck(value) {
