@@ -13,6 +13,10 @@ function validate1() {
     getNotification(Boolean(lNameResult), "lname");
     getNotification(Boolean(genderResult), "gender");
     getNotification(Boolean(stateResult), "state");
+
+    if (Boolean(fNameResult) && Boolean(lNameResult) && Boolean(genderResult) && Boolean(stateResult))
+        location.href = "./validation2.html";
+
 }
 
 function nameCheck(name) {
@@ -31,8 +35,8 @@ function getNotification(bool, id) {
         label.setAttribute('class', 'errorMessage');
     }
 
-    const errors = { fname: "Please enter a valid name", lname: "Please enter a valid name", gender: "Please select an option", state: "Please select an option" }
-    errors[id]
+    const errors = { fname: "Please enter a valid name", lname: "Please enter a valid name", gender: "Please select an option", state: "Please select an option" };
+    errors[id];
 
     label.innerHTML = bool ? "" : errors[id];
     document.getElementById(id).appendChild(label);

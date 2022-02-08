@@ -15,8 +15,15 @@
             <legend>Contact information</legend>
 
             <p id="email">Email:
-                <input type="text" id="email">
+                <input type="text" name="email" label="email">
             </p>
+            <p id="phone">Phone:
+                <input type="text" name="phone" label="phone">
+            </p>
+            <p id="address">Address:
+                <input type="text" name="address" label="address">
+            </p>
+            <input onCLick="validate2()" type="button" id="submit" name="submit" value="submit" />
         </fieldset>
     </form>
 </body>
